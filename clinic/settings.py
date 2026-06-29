@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-l@s5n#yw)%@5v53yapic#%8w=btrwzzhwun)sj2_%e8ae(pow4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# Look for this line and ensure your live URL is inside it
+ALLOWED_HOSTS = ['shree-sahaj-naturopathy.onrender.com', 'localhost', '127.0.0.1']
+
+# ADD THIS NEW BLOCK RIGHT BELOW ALLOWED_HOSTS:
+CSRF_TRUSTED_ORIGINS = [
+    'https://shree-sahaj-naturopathy.onrender.com',
+]
 
 # Application definition
 

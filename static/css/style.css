@@ -43,3 +43,17 @@ body {
 .team-card:hover img {
     transform: scale(1.08);
 }
+/* Testimonials Section Custom Styles */
+#testimonials {
+    background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+}
+
+.carousel-item p {
+    font-style: italic;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}{{ treatment.title }} | Shree Sahaj Naturopathy{% endblock %}
+
+{% block content %}
+<!-- Header Banner Section -->
+<section class="bg-success text-white py-5">
+    <div class="container text-center">
+        <div class="display-2 mb-3">{{ treatment.icon }}</div>
+        <h1 class="display-4 fw-bold">{{ treatment.title }}</h1>
+        <p class="lead">Holistic, Drugless Naturopathic Care & Recovery Plans</p>
+    </div>
+</section>
+
+<!-- Content Details Section -->
+<section class="container my-5">
+    <div class="row g-5">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm p-4 mb-4">
+                <h3 class="text-success fw-bold mb-3">Understanding the Condition</h3>
+                
+                <h5 class="fw-bold text-dark mt-4">⚠️ Primary Symptoms</h5>
+                <p class="text-muted fs-5">{{ treatment.symptoms }}</p>
+                
+                <h5 class="fw-bold text-dark mt-4">🔍 Common Root Causes</h5>
+                <p class="text-muted fs-5">{{ treatment.causes }}</p>
+            </div>
+
+            <div class="card border-0 shadow-sm p-4 text-white bg-dark">
+                <h3 class="text-success fw-bold mb-3">Our Naturopathy Treatment Pathway</h3>
+                <p class="fs-5 opacity-90 mb-0">{{ treatment.natural_treatment }}</p>
+            </div>
+        </div>
+
+        <!-- Sidebar Sticky Call-To-Action (CTA) -->
+        <div class="col-lg-4">
+            <div class="card border-0 bg-light p-4 sticky-top" style="top: 20px;">
+                <h4 class="fw-bold text-dark mb-3">Ready to Recover Naturally?</h4>
+                <p class="text-muted small">Schedule an evaluation session with our certified medical naturopath practitioners.</p>
+                <hr>
+                <a href="{% url 'home' %}#appointment" class="btn btn-success w-100 btn-lg shadow-sm mb-3">Book Appointment Now</a>
+                <a href="{% url 'home' %}" class="btn btn-outline-secondary w-100">← Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

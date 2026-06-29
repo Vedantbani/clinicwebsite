@@ -1,0 +1,45 @@
+/* Base Layout Overrides */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    background-color: #fcfdfc;
+}
+
+/* Navbar Adjustments */
+.navbar-brand {
+    font-size: 26px;
+    letter-spacing: 0.5px;
+}
+
+/* Feature Cards hover states */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* Utility settings */
+.opacity-90 {
+    opacity: 0.90;
+}
+/* Doctor Section Custom Aesthetics */
+.team-card {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(25, 135, 84, 0.1) !important;
+}
+
+.team-card img {
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover img {
+    transform: scale(1.08);
+}

@@ -77,7 +77,8 @@
             </div>
     </div>
 </section>
-<section id="packages" class="py-5">
+<!-- Section 5: Holistic Health Packages -->
+<section id="packages" class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
             <span class="text-success fw-bold text-uppercase tracking-wider">Our Programs</span>
@@ -85,33 +86,101 @@
             <div class="mx-auto bg-success" style="width: 50px; height: 3px;"></div>
         </div>
 
-        <div class="table-responsive shadow-sm rounded-3">
-            <table class="table table-hover align-middle bg-white mb-0">
-                <thead class="table-success text-dark text-uppercase">
+        <!-- 1. DESKTOP VIEW: Clean Table layout (Hidden on mobile screens) -->
+        <div class="d-none d-md-block shadow-sm rounded-3 overflow-hidden bg-white border">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-success text-dark">
                     <tr>
-                        <th scope="col" class="py-3 ps-4">Package Name</th>
-                        <th scope="col" class="py-3">Duration</th>
-                        <th scope="col" class="py-3">Therapeutic Focus</th>
-                        <th scope="col" class="py-3 text-end pe-4">Action</th>
+                        <th class="py-3 ps-4" style="width: 30%;">Package Name</th>
+                        <th class="py-3 text-center" style="width: 15%;">Duration</th>
+                        <th class="py-3" style="width: 35%;">Therapeutic Focus</th>
+                        <th class="py-3 text-end pe-4" style="width: 20%;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for package in packages %}
                     <tr>
-                        <td class="py-3 ps-4 fw-bold text-secondary">{{ package.name }}</td>
-                        <td class="py-3"><span class="badge bg-light text-success border border-success px-3 py-2">{{ package.duration }}</span></td>
-                        <td class="py-3 text-muted">{{ package.focus }}</td>
-                        <td class="py-3 text-end pe-4">
-                            <a href="#appointment" class="btn btn-sm btn-success px-3 rounded-pill">Inquire Now</a>
-                        </td>
+                        <td class="py-3 ps-4 fw-bold text-secondary">Detox & Rejuvenation</td>
+                        <td class="text-center"><span class="badge border border-success text-success px-3 py-2">7 Days</span></td>
+                        <td class="text-muted">Complete body purification, digestive rest, and toxin elimination.</td>
+                        <td class="text-end pe-4"><a href="#appointment" class="btn btn-sm btn-success rounded-pill px-4">Enquire</a></td>
                     </tr>
-                    {% endfor %}
+                    <tr>
+                        <td class="py-3 ps-4 fw-bold text-secondary">Diabetes Management Plan</td>
+                        <td class="text-center"><span class="badge border border-success text-success px-3 py-2">15 Days</span></td>
+                        <td class="text-muted">Natural blood sugar stabilization, customized diet routing, and yoga.</td>
+                        <td class="text-end pe-4"><a href="#appointment" class="btn btn-sm btn-success rounded-pill px-4">Enquire</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 ps-4 fw-bold text-secondary">Weight Loss Program</td>
+                        <td class="text-center"><span class="badge border border-success text-success px-3 py-2">30 Days</span></td>
+                        <td class="text-muted">Metabolic reset, natural fat burning therapies, and active guidance.</td>
+                        <td class="text-end pe-4"><a href="#appointment" class="btn btn-sm btn-success rounded-pill px-4">Enquire</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 ps-4 fw-bold text-secondary">Arthritis & Pain Relief</td>
+                        <td class="text-center"><span class="badge border border-success text-success px-3 py-2">21 Days</span></td>
+                        <td class="text-muted">Joint mobility improvement, clinical hydrotherapy, and inflammation relief.</td>
+                        <td class="text-end pe-4"><a href="#appointment" class="btn btn-sm btn-success rounded-pill px-4">Enquire</a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+
+        <!-- 2. MOBILE VIEW: Beautifully Stacked Cards (Hidden on desktop screens) -->
+        <div class="d-block d-md-none">
+            <div class="row g-3">
+                <!-- Mobile Card 1 -->
+                <div class="col-12">
+                    <div class="card border shadow-sm rounded-3 p-3 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold text-success mb-0">Detox & Rejuvenation</h5>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">7 Days</span>
+                        </div>
+                        <p class="text-muted small mb-3">Complete body purification, digestive rest, and toxin elimination.</p>
+                        <a href="#appointment" class="btn btn-success btn-sm w-100 rounded-pill py-2 text-white">Enquire About Plan</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Card 2 -->
+                <div class="col-12">
+                    <div class="card border shadow-sm rounded-3 p-3 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold text-success mb-0">Diabetes Management</h5>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">15 Days</span>
+                        </div>
+                        <p class="text-muted small mb-3">Natural blood sugar stabilization, customized diet routing, and yoga.</p>
+                        <a href="#appointment" class="btn btn-success btn-sm w-100 rounded-pill py-2 text-white">Enquire About Plan</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Card 3 -->
+                <div class="col-12">
+                    <div class="card border shadow-sm rounded-3 p-3 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold text-success mb-0">Weight Loss Program</h5>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">30 Days</span>
+                        </div>
+                        <p class="text-muted small mb-3">Metabolic reset, natural fat burning therapies, and active guidance.</p>
+                        <a href="#appointment" class="btn btn-success btn-sm w-100 rounded-pill py-2 text-white">Enquire About Plan</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Card 4 -->
+                <div class="col-12">
+                    <div class="card border shadow-sm rounded-3 p-3 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold text-success mb-0">Arthritis & Pain Relief</h5>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">21 Days</span>
+                        </div>
+                        <p class="text-muted small mb-3">Joint mobility improvement, clinical hydrotherapy, and inflammation relief.</p>
+                        <a href="#appointment" class="btn btn-success btn-sm w-100 rounded-pill py-2 text-white">Enquire About Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
-
 <!-- Section 6: Doctors & Experts Profiles -->
 <section id="doctors" class="py-5 bg-white">
     <div class="container">

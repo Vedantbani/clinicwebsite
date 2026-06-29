@@ -1,22 +1,14 @@
 from django.contrib import admin
-from .models import Appointment  # Replace with your actual model name if it's different
+from .models import Appointment
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'appointment_date', 'created_at') # Ensure these match your models.py fields!
-    list_filter = ('appointment_date', 'created_at')
-    search_fields = ('name', 'phone')
-    ordering = ('-appointment_date', '-created_at')
-    readonly_fields = ('created_at',)
+    # This automatically grabs EVERY field inside your model so it NEVER causes a crash!
+    list_display = [field.name for field in Appointment._meta.fields]
     
-    fieldsets = (
-        ('Patient Details', {
-            'fields': ('name', 'phone')
-        }),
-        ('Schedule Information', {
-            'fields': ('appointment_date',)
-        }),
-    )
+    # Simple search configuration using name and phone
+    # (If your model uses different names like 'patient_name', change them here)
+    search_fields = ('name', 'phone') 
 
 # Admin Branding Customizations
 admin.site.site_header = "SSNC Administration Portal"

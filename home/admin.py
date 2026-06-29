@@ -3,23 +3,22 @@ from .models import Appointment
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
-    # 1. Dynamically grab all model fields
-    all_fields = [field.name for field in Appointment._meta.fields]
-    list_display = all_fields
+    # 1. Pull all your model's fields dynamically
+    list_display = [field.name for field in Appointment._meta.fields]
     
-    # 2. Make the very first column (usually ID or Name) a clickable link to open details
-    list_display_links = (all_fields[0],) 
+    # 2. Make the first column (the ID) clickable to view details instantly
+    list_display_links = (list_display[0],)
     
-    # 3. Simple live search
+    # 3. Simple search configuration using name and phone
     search_fields = ('name', 'phone')
 
-    # 4. Custom trick to rename Django's default column headers or text to be simpler
+    # 4. Optional: If 'name' is an actual column in your table, let's make it clickable too!
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Replaces internal technical strings to make management highly readable
-        self.list_display_links = [f for f in self.list_display if f in ['name', 'id', all_fields[0]]]
-
-# Admin Interface Branding
+        if 'name' in self.list_display:
+            self.list_display_links = (self.list_display[0], 'name')
+            
+# Admin Interface Branding Titles
 admin.site.site_header = "SSNC Administration Portal"
 admin.site.site_title = "SSNC Admin Control"
 admin.site.index_title = "Patient Bookings Dashboard"

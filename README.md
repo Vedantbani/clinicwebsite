@@ -4,7 +4,7 @@ Shree Sahaj Naturopathy Clinic Management System is a full-stack Django applicat
 
 ## 🔗 Try it on
 
-https://clinicwebsite.onrender.com
+[https://clinicwebsite.onrender.com](https://shree-sahaj-naturopathy.onrender.com/)
 
 ## ✨ Features
 
@@ -61,23 +61,17 @@ clinicwebsite/
 📡 API & Routing Overview
 System Access
 -GET /login/ — Load authentication entry platform
-
 -POST /login/ — Submit credentials for validation token authorization
-
 -GET /logout/ — Safely clear session configurations and redirect users
 
 Patient Directory Management
 -GET /patients/ — Display responsive master patient tracking dashboard
-
 -POST /patients/add/ — Store newly compiled client parameters inside the dataset
-
 -GET /patients/view/:id/ — Read unique data parameters corresponding to a clinical file identification
-
 -POST /patients/edit/:id/ — Save dynamic text revisions into structural patient profiles
 
 Enterprise Administrative Controls
 -GET /admin/ — Load the native master administration panel portal
-
 -GET /admin/clinic/patient/ — Filter systemic overview logs with advanced query tools
 
 🎯 Use Case
